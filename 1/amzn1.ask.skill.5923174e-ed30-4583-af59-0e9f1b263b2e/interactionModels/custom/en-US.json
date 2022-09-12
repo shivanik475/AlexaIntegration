@@ -1,0 +1,163 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "adobe document cloud",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "Hello World"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "NotificationIntent",
+          "slots": [
+            {
+              "name": "latest",
+              "type": "durationperiod"
+            },
+            {
+              "name": "todays",
+              "type": "durationperiod"
+            }
+          ],
+          "samples": [
+            "tell me my notifications",
+            "show alerts",
+            "show messages",
+            "show notification"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "yesterday"
+              }
+            },
+            {
+              "name": {
+                "value": "todays"
+              }
+            },
+            {
+              "name": {
+                "value": "last"
+              }
+            },
+            {
+              "name": {
+                "value": "latest"
+              }
+            }
+          ],
+          "name": "durationperiod"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Fill and Sign"
+              }
+            },
+            {
+              "name": {
+                "value": "Signed"
+              }
+            },
+            {
+              "name": {
+                "value": "sign"
+              }
+            },
+            {
+              "name": {
+                "value": "shared"
+              }
+            }
+          ],
+          "name": "filetype"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "HelloWorldIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.67344505270"
+          },
+          "slots": []
+        },
+        {
+          "name": "NotificationIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "latest",
+              "type": "durationperiod",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "todays",
+              "type": "durationperiod",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        }
+      ],
+      "delegationStrategy": "SKILL_RESPONSE"
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Intent.67344505270",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you looking for Adobe Document Cloud Skill"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1175065303551",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you looking for notifications"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "16"
+}
